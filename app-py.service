@@ -1,0 +1,13 @@
+[Unit]
+Description=Simple Python HTTP Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /root/konzek-case/app.py
+Restart=always
+StandardOutput=append:/var/log/app.log
+StandardError=append:/var/log/app.log
+
+[Install]
+WantedBy=multi-user.target
+
